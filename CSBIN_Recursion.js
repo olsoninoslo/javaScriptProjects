@@ -220,3 +220,24 @@ function getRangeBetween(x, y, outputArr = []) {
 // console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
 // console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
 
+
+// Extra challenges
+
+// MCalculate the fibinocci sequence and utilize memoization
+
+// memoization of fibonacci
+
+function memoFib(num, cache) {
+	// creates a cache object or preserves the existing cache object
+	cache = cache || {};
+
+	// If the number is cached, return the result
+	if (cache[num]) return cache[num];
+
+	// If the number is 1 or 0, return 1 (the definition of 1! = 0! = 1)
+	if (num <= 1) return 1;
+
+	// Use recursion to fill out the cache
+	return cache[num] = fib(num-1, cache) + fib(num(num - 2, cache));
+}
+
