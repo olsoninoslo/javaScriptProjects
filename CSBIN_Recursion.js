@@ -3,6 +3,13 @@ console.log('Hello, world!');
 
 
 // Challenge 1
+
+/* 
+Write a recursive function countdown that accepts a positive 
+integer n as an input and logs every number from n (inclusive) 
+to 0 (exclusive) to the console.
+*/
+
 function countdown(n) {
 	// log n
   console.log(n);
@@ -19,6 +26,9 @@ function countdown(n) {
 
 
 // Challenge 2
+/*
+Write a recursive function sum that calculates the sum of an array of integers.
+*/
 function sum(array, index = 0) {
 	// create a base case
   if ( index === array.length - 1) {
@@ -35,6 +45,12 @@ function sum(array, index = 0) {
 
 
 // Challenge 3
+/*
+Write a recursive function palindrome that accepts a string as an input and 
+returns true if that string is a palindrome (the string is the same forward 
+and backwards). The input string may have punctuation and symbols, but that 
+should not affect whether the string is a palindrome.
+*/
 function palindrome(string) {
 	// Use Regex to sanitize input string for testcases.
   string = string.replace(/\W/ig, '').toLowerCase();                
@@ -58,7 +74,9 @@ function palindrome(string) {
 
 
 // Challenge 4
-
+/*
+Write a recursive function isPrime that determines if a number is prime and returns true if it is.
+*/
 function isPrime(num, testNum = num - 1) {
 	//Take care of all negative numbers.
   if(num < 2) return false;
@@ -78,6 +96,10 @@ function isPrime(num, testNum = num - 1) {
 
 
 //Challenge 5
+/*
+Write a recursive function pathFinder that takes an object and array as 
+inputs and returns the value with the given path.
+*/
 function pathFinder(obj, arr, index = 0) {
   // recursive case: iterate through arr and increment index
   if(typeof obj[arr[index]] === "object"){
@@ -95,6 +117,10 @@ function pathFinder(obj, arr, index = 0) {
 
 
 //Challenge 6
+/*
+Write a recursive function flattenRecursively that flattens a nested array. 
+Your function should be able to handle varying levels of nesting.
+*/
 function flattenRecursively(arr, newArr = [], index = 0) {
   //Break case: if we've emptied arr, return newArray
   if(arr[index] === undefined) {
@@ -116,6 +142,11 @@ function flattenRecursively(arr, newArr = [], index = 0) {
 
 
 //Challenge 7
+/*
+Write a recursive function findInOrderedSet that determines if a number is in an 
+ordered array. Assume the array is sorted. BONUS: Write the function in such a 
+way that fully iterating through the array to check isn't necessary.
+*/
 function findInOrderedSet(arr, target) {
   // initialize a label for the last element of array
   const lastIndex = arr.length - 1;
@@ -144,6 +175,12 @@ function findInOrderedSet(arr, target) {
 
 
 //Challenge 8
+/*
+There are n stairs. A person standing at the bottom wants to reach the top. 
+The person can climb either 1 or 2 stairs at a time. Write a function 
+countWaysToReachNthStair to count the number of ways the person can reach 
+the top (order does matter). See test cases for examples.
+*/
 function countWaysToReachNthStair1(n, memo = {1:1, 2:2}, arr = []) {
   // if memo has n return n's value
   //arr.push(1)
@@ -165,7 +202,9 @@ function countWaysToReachNthStair1(n, memo = {1:1, 2:2}, arr = []) {
 function countWaysToReachNthStair(n, arr = []) {
   // used to counter frame stacks
   //arr.push(1);
-// Similiar to the fibonacci seq, we have only two possible routes for this question. For any positive integer, n, we can decrement by either 1 or 2 until we finally reach either 1 or 2. At that point - we can make use of the stack frame to keep track of the routes. 
+  // Similiar to the fibonacci seq, we have only two possible routes for this question. 
+  //For any positive integer, n, we can decrement by either 1 or 2 until we finally reach either 1 or 2. 
+  //At that point - we can make use of the stack frame to keep track of the routes. 
 
   if(n === 1) return 1;
   
@@ -180,6 +219,10 @@ function countWaysToReachNthStair(n, arr = []) {
 
 
 //Challenge 9
+/*
+Given a collection of distinct integers, write a function getPermutations 
+to return all possible permutations.
+*/
 function getPermutations(nums, result = []) {
   // break case 1: if nums has length 1 return it's element
 	if (nums.length === 1) {
@@ -207,6 +250,10 @@ console.log(getPermutations([1, 2, 3, 4])) //-> [[1, 2, 3], [1, 3, 2], [2, 1, 3]
 
 
 //Challenge 10
+/*
+Write a function getRangeBetween that returns an array of all integers 
+between values x and y, not including x and y.
+*/
 function getRangeBetween(x, y, outputArr = []) {
 	//Note: x and y are exclusive
   //Base case: Starting from x, if we reach y, let's return our arr
@@ -223,9 +270,7 @@ function getRangeBetween(x, y, outputArr = []) {
 
 // Extra challenges
 
-// MCalculate the fibinocci sequence and utilize memoization
-
-// memoization of fibonacci
+// Calculate the fibinocci sequence and utilize memoization
 
 function memoFib(num, cache) {
 	// creates a cache object or preserves the existing cache object
